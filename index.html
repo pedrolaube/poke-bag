@@ -1,95 +1,294 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>POKE-BAG</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Chakra+Petch:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body class="intro">
-<svg class="gsvg" aria-hidden="true"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6cab6c"/><stop offset="1" stop-color="#4b8450"/></linearGradient></defs></svg>
+  <head>
+    <!-- ---- Configurações da página (não aparecem na tela) ---- -->
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>POKE-BAG</title>
+    <!-- Fontes do Google (Orbitron e Chakra Petch) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Chakra+Petch:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Liga o arquivo de estilos -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<div id="introbg" aria-hidden="true"></div>
-<div id="fly" aria-hidden="true"><svg viewBox="0 0 65.00 87.25" aria-hidden="true"><path class="pc" pathLength="1" style="--d:0.00s" d="M55.12 67.75 L54.75 67.38 L52.50 67.50 L51.50 68.00 L49.75 70.12 L48.25 71.62 L45.62 76.62 L44.25 78.75 L43.00 79.88 L42.38 80.25 L41.12 80.62 L33.12 80.38 L30.38 79.88 L23.50 79.25 L21.25 78.25 L20.25 77.25 L19.25 75.88 L17.00 75.25 L16.12 74.75 L15.25 74.75 L14.88 75.12 L15.00 76.50 L16.12 79.00 L17.00 80.25 L19.12 82.12 L21.75 83.25 L26.62 83.88 L28.88 84.38 L32.38 84.50 L35.25 84.88 L39.62 85.00 L39.75 85.12 L42.12 85.00 L44.25 84.38 L46.00 83.38 L48.38 81.00 L50.12 78.38 L51.38 75.75 L52.62 73.62 L54.88 69.00Z"/><path class="pc" pathLength="1" style="--d:0.12s" d="M2.38 52.25 L2.00 54.00 L2.00 56.88 L3.00 60.88 L4.75 64.12 L5.62 65.25 L8.50 67.88 L10.50 69.12 L12.75 70.25 L13.75 70.50 L15.62 71.38 L16.00 71.38 L21.12 73.12 L22.75 73.38 L25.62 74.25 L28.38 74.62 L29.62 74.62 L31.75 75.00 L33.88 75.00 L38.25 74.38 L41.50 73.12 L43.12 72.25 L45.25 70.75 L47.62 68.50 L48.00 67.62 L47.88 67.12 L47.38 66.75 L44.25 66.25 L42.50 65.62 L40.50 65.25 L34.50 63.25 L32.75 62.50 L31.25 62.50 L28.25 64.38 L25.25 65.25 L22.00 65.25 L19.38 64.38 L17.50 63.25 L15.38 61.25 L13.88 58.62 L13.00 55.50 L12.38 54.75 L11.12 54.38 L9.62 53.62 L8.12 53.25 L4.00 51.38 L2.88 51.50Z"/><path class="pc" pathLength="1" style="--d:0.24s" d="M58.25 38.62 L57.75 38.25 L56.88 38.38 L51.50 42.88 L46.12 46.88 L41.12 50.25 L35.50 53.50 L35.00 54.00 L34.75 54.75 L34.75 55.50 L34.38 57.00 L34.50 57.88 L35.38 58.50 L36.50 58.75 L37.50 59.25 L41.88 60.50 L43.38 61.12 L46.00 61.62 L47.62 62.25 L51.25 62.75 L53.62 62.75 L55.38 62.12 L56.62 60.75 L57.75 58.25 L58.88 54.75 L59.75 49.00 L59.75 45.00 L58.88 40.00Z"/><path class="pc" pathLength="1" style="--d:0.36s" d="M54.62 33.00 L53.12 31.00 L50.25 28.38 L47.75 26.75 L43.25 24.75 L38.12 23.62 L32.50 23.62 L30.88 23.88 L29.25 24.38 L27.38 24.62 L24.38 25.62 L20.00 27.62 L16.25 30.00 L13.12 32.62 L9.62 36.25 L7.00 40.00 L4.38 45.12 L4.38 46.00 L4.62 46.38 L6.25 47.25 L10.00 48.62 L11.12 49.25 L13.00 49.88 L13.75 49.88 L14.50 49.38 L15.12 48.25 L16.75 46.38 L18.88 44.88 L19.88 44.38 L22.38 43.62 L25.50 43.50 L29.12 44.62 L31.00 45.88 L33.38 48.38 L33.75 48.50 L34.50 48.38 L36.50 47.25 L42.62 43.25 L49.25 38.38 L53.62 34.88 L54.50 34.00Z"/><path class="pc" pathLength="1" style="--d:0.48s" d="M62.50 4.62 L61.62 3.38 L61.00 2.88 L59.00 2.12 L56.75 2.00 L55.00 2.38 L53.75 2.88 L52.12 4.00 L46.50 9.75 L42.12 13.62 L37.50 17.12 L35.62 18.25 L35.12 18.75 L35.12 19.12 L35.50 19.38 L39.25 19.38 L41.38 19.62 L45.50 20.62 L47.75 21.50 L51.88 23.75 L54.38 25.62 L57.62 28.88 L58.12 29.12 L58.50 29.00 L59.00 28.12 L59.12 26.75 L59.88 24.38 L60.00 23.12 L61.62 16.25 L62.00 13.00 L62.62 10.62 L62.88 8.50 L62.88 5.75Z"/><circle class="btn-c" pathLength="1" cx="23.94" cy="54.49" r="6.74"/></svg></div>
-<button class="skip" id="skip" type="button">Pular</button>
+  <body class="intro">
+    <!-- ---- Gradiente verde usado nas folhas do logo (invisível) ---- -->
+    <svg class="gsvg" aria-hidden="true">
+      <defs>
+        <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#6cab6c" />
+          <stop offset="1" stop-color="#4b8450" />
+        </linearGradient>
+      </defs>
+    </svg>
 
-<header class="head">
-  <a class="brand" href="#inicio">POKE-BAG</a>
-  <div class="logo-slot"><svg viewBox="0 0 65.00 87.25" role="img" aria-label="Logo POKE-BAG" id="hlogo"><path d="M55.12 67.75 L54.75 67.38 L52.50 67.50 L51.50 68.00 L49.75 70.12 L48.25 71.62 L45.62 76.62 L44.25 78.75 L43.00 79.88 L42.38 80.25 L41.12 80.62 L33.12 80.38 L30.38 79.88 L23.50 79.25 L21.25 78.25 L20.25 77.25 L19.25 75.88 L17.00 75.25 L16.12 74.75 L15.25 74.75 L14.88 75.12 L15.00 76.50 L16.12 79.00 L17.00 80.25 L19.12 82.12 L21.75 83.25 L26.62 83.88 L28.88 84.38 L32.38 84.50 L35.25 84.88 L39.62 85.00 L39.75 85.12 L42.12 85.00 L44.25 84.38 L46.00 83.38 L48.38 81.00 L50.12 78.38 L51.38 75.75 L52.62 73.62 L54.88 69.00Z" fill="url(#gg)"/><path d="M2.38 52.25 L2.00 54.00 L2.00 56.88 L3.00 60.88 L4.75 64.12 L5.62 65.25 L8.50 67.88 L10.50 69.12 L12.75 70.25 L13.75 70.50 L15.62 71.38 L16.00 71.38 L21.12 73.12 L22.75 73.38 L25.62 74.25 L28.38 74.62 L29.62 74.62 L31.75 75.00 L33.88 75.00 L38.25 74.38 L41.50 73.12 L43.12 72.25 L45.25 70.75 L47.62 68.50 L48.00 67.62 L47.88 67.12 L47.38 66.75 L44.25 66.25 L42.50 65.62 L40.50 65.25 L34.50 63.25 L32.75 62.50 L31.25 62.50 L28.25 64.38 L25.25 65.25 L22.00 65.25 L19.38 64.38 L17.50 63.25 L15.38 61.25 L13.88 58.62 L13.00 55.50 L12.38 54.75 L11.12 54.38 L9.62 53.62 L8.12 53.25 L4.00 51.38 L2.88 51.50Z" fill="url(#gg)"/><path d="M58.25 38.62 L57.75 38.25 L56.88 38.38 L51.50 42.88 L46.12 46.88 L41.12 50.25 L35.50 53.50 L35.00 54.00 L34.75 54.75 L34.75 55.50 L34.38 57.00 L34.50 57.88 L35.38 58.50 L36.50 58.75 L37.50 59.25 L41.88 60.50 L43.38 61.12 L46.00 61.62 L47.62 62.25 L51.25 62.75 L53.62 62.75 L55.38 62.12 L56.62 60.75 L57.75 58.25 L58.88 54.75 L59.75 49.00 L59.75 45.00 L58.88 40.00Z" fill="url(#gg)"/><path d="M54.62 33.00 L53.12 31.00 L50.25 28.38 L47.75 26.75 L43.25 24.75 L38.12 23.62 L32.50 23.62 L30.88 23.88 L29.25 24.38 L27.38 24.62 L24.38 25.62 L20.00 27.62 L16.25 30.00 L13.12 32.62 L9.62 36.25 L7.00 40.00 L4.38 45.12 L4.38 46.00 L4.62 46.38 L6.25 47.25 L10.00 48.62 L11.12 49.25 L13.00 49.88 L13.75 49.88 L14.50 49.38 L15.12 48.25 L16.75 46.38 L18.88 44.88 L19.88 44.38 L22.38 43.62 L25.50 43.50 L29.12 44.62 L31.00 45.88 L33.38 48.38 L33.75 48.50 L34.50 48.38 L36.50 47.25 L42.62 43.25 L49.25 38.38 L53.62 34.88 L54.50 34.00Z" fill="url(#gg)"/><path d="M62.50 4.62 L61.62 3.38 L61.00 2.88 L59.00 2.12 L56.75 2.00 L55.00 2.38 L53.75 2.88 L52.12 4.00 L46.50 9.75 L42.12 13.62 L37.50 17.12 L35.62 18.25 L35.12 18.75 L35.12 19.12 L35.50 19.38 L39.25 19.38 L41.38 19.62 L45.50 20.62 L47.75 21.50 L51.88 23.75 L54.38 25.62 L57.62 28.88 L58.12 29.12 L58.50 29.00 L59.00 28.12 L59.12 26.75 L59.88 24.38 L60.00 23.12 L61.62 16.25 L62.00 13.00 L62.62 10.62 L62.88 8.50 L62.88 5.75Z" fill="url(#gg)"/><circle cx="23.94" cy="54.49" r="6.74" fill="#e6e2dc"/></svg></div>
-  <div class="head-fade"></div>
-</header>
+    <!-- ---- Animação de abertura (5 s): fundo, logo que voa e botão Pular ---- -->
+    <div id="introbg" aria-hidden="true"></div>
+    <div id="fly" aria-hidden="true">
+      <svg viewBox="0 0 65.00 87.25" aria-hidden="true">
+        <path
+          class="pc"
+          pathLength="1"
+          style="--d: 0s"
+          d="M55.12 67.75 L54.75 67.38 L52.50 67.50 L51.50 68.00 L49.75 70.12 L48.25 71.62 L45.62 76.62 L44.25 78.75 L43.00 79.88 L42.38 80.25 L41.12 80.62 L33.12 80.38 L30.38 79.88 L23.50 79.25 L21.25 78.25 L20.25 77.25 L19.25 75.88 L17.00 75.25 L16.12 74.75 L15.25 74.75 L14.88 75.12 L15.00 76.50 L16.12 79.00 L17.00 80.25 L19.12 82.12 L21.75 83.25 L26.62 83.88 L28.88 84.38 L32.38 84.50 L35.25 84.88 L39.62 85.00 L39.75 85.12 L42.12 85.00 L44.25 84.38 L46.00 83.38 L48.38 81.00 L50.12 78.38 L51.38 75.75 L52.62 73.62 L54.88 69.00Z"
+        />
+        <path
+          class="pc"
+          pathLength="1"
+          style="--d: 0.12s"
+          d="M2.38 52.25 L2.00 54.00 L2.00 56.88 L3.00 60.88 L4.75 64.12 L5.62 65.25 L8.50 67.88 L10.50 69.12 L12.75 70.25 L13.75 70.50 L15.62 71.38 L16.00 71.38 L21.12 73.12 L22.75 73.38 L25.62 74.25 L28.38 74.62 L29.62 74.62 L31.75 75.00 L33.88 75.00 L38.25 74.38 L41.50 73.12 L43.12 72.25 L45.25 70.75 L47.62 68.50 L48.00 67.62 L47.88 67.12 L47.38 66.75 L44.25 66.25 L42.50 65.62 L40.50 65.25 L34.50 63.25 L32.75 62.50 L31.25 62.50 L28.25 64.38 L25.25 65.25 L22.00 65.25 L19.38 64.38 L17.50 63.25 L15.38 61.25 L13.88 58.62 L13.00 55.50 L12.38 54.75 L11.12 54.38 L9.62 53.62 L8.12 53.25 L4.00 51.38 L2.88 51.50Z"
+        />
+        <path
+          class="pc"
+          pathLength="1"
+          style="--d: 0.24s"
+          d="M58.25 38.62 L57.75 38.25 L56.88 38.38 L51.50 42.88 L46.12 46.88 L41.12 50.25 L35.50 53.50 L35.00 54.00 L34.75 54.75 L34.75 55.50 L34.38 57.00 L34.50 57.88 L35.38 58.50 L36.50 58.75 L37.50 59.25 L41.88 60.50 L43.38 61.12 L46.00 61.62 L47.62 62.25 L51.25 62.75 L53.62 62.75 L55.38 62.12 L56.62 60.75 L57.75 58.25 L58.88 54.75 L59.75 49.00 L59.75 45.00 L58.88 40.00Z"
+        />
+        <path
+          class="pc"
+          pathLength="1"
+          style="--d: 0.36s"
+          d="M54.62 33.00 L53.12 31.00 L50.25 28.38 L47.75 26.75 L43.25 24.75 L38.12 23.62 L32.50 23.62 L30.88 23.88 L29.25 24.38 L27.38 24.62 L24.38 25.62 L20.00 27.62 L16.25 30.00 L13.12 32.62 L9.62 36.25 L7.00 40.00 L4.38 45.12 L4.38 46.00 L4.62 46.38 L6.25 47.25 L10.00 48.62 L11.12 49.25 L13.00 49.88 L13.75 49.88 L14.50 49.38 L15.12 48.25 L16.75 46.38 L18.88 44.88 L19.88 44.38 L22.38 43.62 L25.50 43.50 L29.12 44.62 L31.00 45.88 L33.38 48.38 L33.75 48.50 L34.50 48.38 L36.50 47.25 L42.62 43.25 L49.25 38.38 L53.62 34.88 L54.50 34.00Z"
+        />
+        <path
+          class="pc"
+          pathLength="1"
+          style="--d: 0.48s"
+          d="M62.50 4.62 L61.62 3.38 L61.00 2.88 L59.00 2.12 L56.75 2.00 L55.00 2.38 L53.75 2.88 L52.12 4.00 L46.50 9.75 L42.12 13.62 L37.50 17.12 L35.62 18.25 L35.12 18.75 L35.12 19.12 L35.50 19.38 L39.25 19.38 L41.38 19.62 L45.50 20.62 L47.75 21.50 L51.88 23.75 L54.38 25.62 L57.62 28.88 L58.12 29.12 L58.50 29.00 L59.00 28.12 L59.12 26.75 L59.88 24.38 L60.00 23.12 L61.62 16.25 L62.00 13.00 L62.62 10.62 L62.88 8.50 L62.88 5.75Z"
+        />
+        <circle class="btn-c" pathLength="1" cx="23.94" cy="54.49" r="6.74" />
+      </svg>
+    </div>
+    <button class="skip" id="skip" type="button">Pular</button>
 
-<div class="nav" id="nav">
-  <button class="burger" id="burger" type="button" aria-label="Abrir menu" aria-expanded="false"><i></i><i></i><i></i></button>
-  <nav class="tabs" aria-label="Principal">
-    <a class="tab" href="#inicio">Início</a>
-    <a class="tab" href="#pokedex">Pokedex</a>
-    <a class="tab" href="#competitivo">Competitivo</a>
-    <a class="tab" href="#simulador">Simulador</a>
-  </nav>
-  <form class="search" id="search" role="search" onsubmit="return false">
-    <input id="q" type="search" placeholder="Nome do Pokémon" aria-label="Pesquisar na Pokedex">
-    <button class="pill" type="button" id="sbtn">Pesquisar</button>
-  </form>
-</div>
-
-<main>
-  <section class="view" id="v-inicio">
-    <h1>Notícias do mundo Pokémon</h1>
-    <div class="carousel">
-      <button class="arrow" type="button" data-dir="-1" aria-label="Anterior">‹</button>
-      <div class="track" id="track">
-        <article class="box news"><b>Novo torneio anunciado</b><span>Inscrições abertas para a próxima temporada.</span></article>
-        <article class="box news"><b>Atualização do meta</b><span>As equipes mais usadas do mês.</span></article>
-        <article class="box news"><b>Novos Pokémon revelados</b><span>Veja o que chega no próximo jogo.</span></article>
-        <article class="box news"><b>Evento especial</b><span>Capturas raras por tempo limitado.</span></article>
-        <article class="box news"><b>Resultados da semana</b><span>Quem avançou nas finais regionais.</span></article>
-        <article class="box news"><b>Guia de iniciantes</b><span>Monte sua primeira equipe.</span></article>
+    <!-- ---- Cabeçalho: nome, logo e faixa vermelha no topo ---- -->
+    <header class="head">
+      <!-- Nome POKE-BAG -->
+      <a class="brand" href="#inicio">POKE-BAG</a>
+      <!-- Logo (quadrado preto ao lado do nome) -->
+      <div class="logo-slot">
+        <svg
+          viewBox="0 0 65.00 87.25"
+          role="img"
+          aria-label="Logo POKE-BAG"
+          id="hlogo"
+        >
+          <path
+            d="M55.12 67.75 L54.75 67.38 L52.50 67.50 L51.50 68.00 L49.75 70.12 L48.25 71.62 L45.62 76.62 L44.25 78.75 L43.00 79.88 L42.38 80.25 L41.12 80.62 L33.12 80.38 L30.38 79.88 L23.50 79.25 L21.25 78.25 L20.25 77.25 L19.25 75.88 L17.00 75.25 L16.12 74.75 L15.25 74.75 L14.88 75.12 L15.00 76.50 L16.12 79.00 L17.00 80.25 L19.12 82.12 L21.75 83.25 L26.62 83.88 L28.88 84.38 L32.38 84.50 L35.25 84.88 L39.62 85.00 L39.75 85.12 L42.12 85.00 L44.25 84.38 L46.00 83.38 L48.38 81.00 L50.12 78.38 L51.38 75.75 L52.62 73.62 L54.88 69.00Z"
+            fill="url(#gg)"
+          />
+          <path
+            d="M2.38 52.25 L2.00 54.00 L2.00 56.88 L3.00 60.88 L4.75 64.12 L5.62 65.25 L8.50 67.88 L10.50 69.12 L12.75 70.25 L13.75 70.50 L15.62 71.38 L16.00 71.38 L21.12 73.12 L22.75 73.38 L25.62 74.25 L28.38 74.62 L29.62 74.62 L31.75 75.00 L33.88 75.00 L38.25 74.38 L41.50 73.12 L43.12 72.25 L45.25 70.75 L47.62 68.50 L48.00 67.62 L47.88 67.12 L47.38 66.75 L44.25 66.25 L42.50 65.62 L40.50 65.25 L34.50 63.25 L32.75 62.50 L31.25 62.50 L28.25 64.38 L25.25 65.25 L22.00 65.25 L19.38 64.38 L17.50 63.25 L15.38 61.25 L13.88 58.62 L13.00 55.50 L12.38 54.75 L11.12 54.38 L9.62 53.62 L8.12 53.25 L4.00 51.38 L2.88 51.50Z"
+            fill="url(#gg)"
+          />
+          <path
+            d="M58.25 38.62 L57.75 38.25 L56.88 38.38 L51.50 42.88 L46.12 46.88 L41.12 50.25 L35.50 53.50 L35.00 54.00 L34.75 54.75 L34.75 55.50 L34.38 57.00 L34.50 57.88 L35.38 58.50 L36.50 58.75 L37.50 59.25 L41.88 60.50 L43.38 61.12 L46.00 61.62 L47.62 62.25 L51.25 62.75 L53.62 62.75 L55.38 62.12 L56.62 60.75 L57.75 58.25 L58.88 54.75 L59.75 49.00 L59.75 45.00 L58.88 40.00Z"
+            fill="url(#gg)"
+          />
+          <path
+            d="M54.62 33.00 L53.12 31.00 L50.25 28.38 L47.75 26.75 L43.25 24.75 L38.12 23.62 L32.50 23.62 L30.88 23.88 L29.25 24.38 L27.38 24.62 L24.38 25.62 L20.00 27.62 L16.25 30.00 L13.12 32.62 L9.62 36.25 L7.00 40.00 L4.38 45.12 L4.38 46.00 L4.62 46.38 L6.25 47.25 L10.00 48.62 L11.12 49.25 L13.00 49.88 L13.75 49.88 L14.50 49.38 L15.12 48.25 L16.75 46.38 L18.88 44.88 L19.88 44.38 L22.38 43.62 L25.50 43.50 L29.12 44.62 L31.00 45.88 L33.38 48.38 L33.75 48.50 L34.50 48.38 L36.50 47.25 L42.62 43.25 L49.25 38.38 L53.62 34.88 L54.50 34.00Z"
+            fill="url(#gg)"
+          />
+          <path
+            d="M62.50 4.62 L61.62 3.38 L61.00 2.88 L59.00 2.12 L56.75 2.00 L55.00 2.38 L53.75 2.88 L52.12 4.00 L46.50 9.75 L42.12 13.62 L37.50 17.12 L35.62 18.25 L35.12 18.75 L35.12 19.12 L35.50 19.38 L39.25 19.38 L41.38 19.62 L45.50 20.62 L47.75 21.50 L51.88 23.75 L54.38 25.62 L57.62 28.88 L58.12 29.12 L58.50 29.00 L59.00 28.12 L59.12 26.75 L59.88 24.38 L60.00 23.12 L61.62 16.25 L62.00 13.00 L62.62 10.62 L62.88 8.50 L62.88 5.75Z"
+            fill="url(#gg)"
+          />
+          <circle cx="23.94" cy="54.49" r="6.74" fill="#e6e2dc" />
+        </svg>
       </div>
-      <button class="arrow" type="button" data-dir="1" aria-label="Próxima">›</button>
-    </div>
-    <h2>Seus favoritos</h2>
-    <div class="fav" id="fav">
-      <div><p>Aqui ficam os Pokémon que você favoritar. Abra a Pokedex e use o botão Favoritar para montar sua lista.</p></div>
-      <div class="box slot"></div><div class="box slot"></div><div class="box slot"></div>
-    </div>
-  </section>
+      <!-- Faixa com degradê vermelho até preto -->
+      <div class="head-fade"></div>
+    </header>
 
-  <section class="view" id="v-pokedex">
-    <h1>Pokedex</h1>
-    <div class="dex" id="dex"></div>
-    <p class="empty box" id="empty">Nenhum Pokémon encontrado.</p>
-  </section>
-
-  <section class="view" id="v-competitivo">
-    <h1>Competitivo</h1>
-    <div class="strat">
-      <article class="card"><h3>Estratégia X</h3><p>Equipe ofensiva focada em velocidade. Abre o jogo com pressão e termina antes de o rival reagir.</p></article>
-      <article class="card"><h3>Estratégia Y</h3><p>Equilíbrio entre defesa e ataque, com troca constante de Pokémon para manter vantagem de tipos.</p></article>
-      <article class="card"><h3>Estratégia Z</h3><p>Clima e terreno como base da equipe: um Pokémon prepara o campo e os demais aproveitam.</p></article>
-      <article class="card"><h3>Estratégia A</h3><p>Equipe de resistência, que desgasta o adversário aos poucos com status e recuperação.</p></article>
-      <article class="card"><h3>Estratégia B</h3><p>Ataques em dupla: dois Pokémon combinam golpes para eliminar ameaças logo no começo.</p></article>
-      <article class="card"><h3>Estratégia C</h3><p>Surpresa e mudança de ritmo, com itens e golpes pouco comuns para quebrar o que o rival espera.</p></article>
+    <!-- ---- Barra de navegação ---- -->
+    <div class="nav" id="nav">
+      <!-- Botão hambúrguer (3 linhas, aparece só no celular) -->
+      <button
+        class="burger"
+        id="burger"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        <i></i><i></i><i></i>
+      </button>
+      <!-- Abas principais -->
+      <nav class="tabs" aria-label="Principal">
+        <a class="tab" href="#inicio">Início</a>
+        <a class="tab" href="#pokedex">Pokedex</a>
+        <a class="tab" href="#competitivo">Competitivo</a>
+        <a class="tab" href="#simulador">Simulador</a>
+      </nav>
+      <!-- Botão de tema claro/escuro -->
+      <button class="pill" type="button" id="theme" aria-label="Alternar tema">
+        Escuro
+      </button>
+      <!-- Pesquisa (o campo abre ao clicar em Pesquisar) -->
+      <form class="search" id="search" role="search" onsubmit="return false;">
+        <input
+          id="q"
+          type="search"
+          placeholder="Nome do Pokémon"
+          aria-label="Pesquisar na Pokedex"
+        />
+        <button class="pill" type="button" id="sbtn">Pesquisar</button>
+      </form>
     </div>
-  </section>
 
-  <section class="view" id="v-simulador">
-    <h1>Simulador</h1>
-    <div class="sim">
-      <div class="pills">
-        <button class="pill" type="button">Suas equipes</button>
-        <button class="pill" type="button">Adicionar equipe</button>
-        <button class="pill" type="button" id="play">jogar</button>
-      </div>
-      <div class="arena" id="arena">Escolha uma equipe e toque em jogar.</div>
-    </div>
-    <h2>Equipes competitivas</h2>
-    <div class="teams"><div class="box">Equipe 1</div><div class="box">Equipe 2</div><div class="box">Equipe 3</div></div>
-  </section>
-</main>
+    <main>
+      <!-- ---- Página: Início ---- -->
+      <section class="view" id="v-inicio">
+        <h1>Notícias do mundo Pokémon</h1>
+        <!-- Carrossel de notícias (setas + cartões) -->
+        <div class="carousel">
+          <button
+            class="arrow"
+            type="button"
+            data-dir="-1"
+            aria-label="Anterior"
+          >
+            ‹
+          </button>
+          <div class="track" id="track">
+            <article class="box news">
+              <img src="images/images.jpg" alt="Novo_torneio_anunciado">
+              <b>Novo torneio anunciado</b
+              ><span>Inscrições abertas para a próxima temporada.</span>
+            </article>
+            <article class="box news">
+              <img src="images/Battle.webp" alt="img2">
+              <b>Atualização do meta</b
+              ><span>As equipes mais usadas do mês.</span>
+            </article>
+            <article class="box news">
+              <img src="images/img3.jpg" alt="img3">
+              <b>Novos Pokémon revelados</b
+              ><span>Veja o que chega no próximo jogo.</span>
+            </article>
+            <article class="box news">
+              <img src="images/img4.jpg" alt="img4">
+              <b>Evento especial</b
+              ><span>Capturas raras por tempo limitado.</span>
+            </article>
+            <article class="box news">
+              <img src="images/img5.jpg" alt="img5">
+              <b>Resultados da semana</b
+              ><span>Quem avançou nas finais regionais.</span>
+            </article>
+            <article class="box news">
+              <img src="images/img6.webp" alt="img6">
+              <b>Guia de iniciantes</b><span>Monte sua primeira equipe.</span>
+            </article>
+          </div>
+          <button class="arrow" type="button" data-dir="1" aria-label="Próxima">
+            ›
+          </button>
+        </div>
+        <!-- Seus favoritos (texto + 3 caixas preenchidas pelo JavaScript) -->
+        <h2>Seus favoritos</h2>
+        <div class="fav" id="fav">
+          <div>
+            <p>
+              Aqui ficam os Pokémon que você favoritar. Abra a Pokedex e use o
+              botão Favoritar para montar sua lista.
+            </p>
+          </div>
+          <div class="box slot"></div>
+          <div class="box slot"></div>
+          <div class="box slot"></div>
+        </div>
+      </section>
 
-<script src="script.js"></script>
-</body>
+      <!-- ---- Página: Pokedex (os cartões são criados pelo JavaScript) ---- -->
+      <section class="view" id="v-pokedex">
+        <h1>Pokedex</h1>
+        <div class="dex" id="dex"></div>
+        <!-- Mensagem quando a pesquisa não acha nada -->
+        <p class="empty box" id="empty">Nenhum Pokémon encontrado.</p>
+      </section>
+
+      <!-- ---- Página: Competitivo (cartões de estratégias) ---- -->
+      <section class="view" id="v-competitivo">
+        <h1>Competitivo</h1>
+        <div class="strat">
+          <article class="card">
+            <h3>Estratégia X</h3>
+            <p>
+              Equipe ofensiva focada em velocidade. Abre o jogo com pressão e
+              termina antes de o rival reagir.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Estratégia Y</h3>
+            <p>
+              Equilíbrio entre defesa e ataque, com troca constante de Pokémon
+              para manter vantagem de tipos.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Estratégia Z</h3>
+            <p>
+              Clima e terreno como base da equipe: um Pokémon prepara o campo e
+              os demais aproveitam.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Estratégia A</h3>
+            <p>
+              Equipe de resistência, que desgasta o adversário aos poucos com
+              status e recuperação.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Estratégia B</h3>
+            <p>
+              Ataques em dupla: dois Pokémon combinam golpes para eliminar
+              ameaças logo no começo.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Estratégia C</h3>
+            <p>
+              Surpresa e mudança de ritmo, com itens e golpes pouco comuns para
+              quebrar o que o rival espera.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ---- Página: Simulador ---- -->
+      <section class="view" id="v-simulador">
+        <h1>Simulador</h1>
+        <div class="sim">
+          <!-- Botões da lateral -->
+          <div class="pills">
+            <button class="pill" type="button">Suas equipes</button>
+            <button class="pill" type="button">Adicionar equipe</button>
+            <button class="pill" type="button" id="play">jogar</button>
+          </div>
+          <!-- Área onde aparece a batalha -->
+          <div class="arena" id="arena">
+            Escolha uma equipe e toque em jogar.
+          </div>
+        </div>
+        <!-- Equipes competitivas -->
+        <h2>Equipes competitivas</h2>
+        <div class="teams">
+          <div class="box">Equipe 1</div>
+          <div class="box">Equipe 2</div>
+          <div class="box">Equipe 3</div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ---- Liga o arquivo de JavaScript ---- -->
+    <script src="script.js"></script>
+  </body>
 </html>
