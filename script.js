@@ -1,37 +1,25 @@
 (function () {
   /* ---- Atalhos ---- */
   var $ = function (s) {
-      return document.querySelector(s);
-    },
+    return document.querySelector(s);
+  },
     body = document.body;
 
   /* ---- Dados da Pokedex (nome, tipo, descrição) ---- */
   var mons = [
-    [
-      "Bulbasaur",
-      "Planta / Veneno",
-      "Carrega uma semente nas costas desde o nascimento.",
-    ],
-    ["Charmander", "Fogo", "A chama na ponta da cauda mostra a sua energia."],
-    ["Squirtle", "Água", "Recolhe-se no casco para se proteger e revidar."],
-    [
-      "Pikachu",
-      "Elétrico",
-      "Guarda eletricidade nas bochechas e a solta em combate.",
-    ],
-    ["Eevee", "Normal", "Seu corpo instável permite várias evoluções."],
-    [
-      "Gengar",
-      "Fantasma / Veneno",
-      "Esconde-se nas sombras e imita quem está por perto.",
-    ],
+    ["Bulbasaur", "Planta / Veneno", "Carrega uma semente nas costas desde o nascimento.", 1],
+    ["Charmander", "Fogo", "A chama na ponta da cauda mostra a sua energia.", 4],
+    ["Squirtle", "Água", "Recolhe-se no casco para se proteger e revidar.", 7],
+    ["Pikachu", "Elétrico", "Guarda eletricidade nas bochechas e a solta em combate.", 25],
+    ["Eevee", "Normal", "Seu corpo instável permite várias evoluções.", 133],
+    ["Gengar", "Fantasma / Veneno", "Esconde-se nas sombras e imita quem está por perto.", 94],
   ];
 
   /* ---- Favoritos: lê a lista salva no navegador ---- */
   var favs = [];
   try {
     favs = JSON.parse(localStorage.getItem("pb-favs") || "[]");
-  } catch (e) {}
+  } catch (e) { }
 
   /* ---- Página Pokedex: cria um cartão para cada Pokémon ---- */
   var dex = $("#dex");
@@ -40,7 +28,11 @@
     r.className = "row";
     r.dataset.n = m[0].toLowerCase();
     r.innerHTML =
-      '<div class="img">IMG</div><div><h3>' +
+      '<div class="img"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' +
+      m[3] +
+      '.png" alt="' +
+      m[0] +
+      '"></div><div><h3>' +
       m[0] +
       "</h3><small>" +
       m[1] +
@@ -61,7 +53,7 @@
       i > -1 ? favs.splice(i, 1) : favs.push(m[0]);
       try {
         localStorage.setItem("pb-favs", JSON.stringify(favs));
-      } catch (e) {}
+      } catch (e) { }
       sync();
       drawFavs();
     };
@@ -149,14 +141,14 @@
     themeBtn.textContent = t === "dark" ? "Claro" : "Escuro";
     try {
       localStorage.setItem("pb-theme", t);
-    } catch (e) {}
+    } catch (e) { }
   }
 
   // Tema inicial: o salvo no navegador ou o do sistema do visitante
   var saved = null;
   try {
     saved = localStorage.getItem("pb-theme");
-  } catch (e) {}
+  } catch (e) { }
   if (!saved) {
     saved = window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
