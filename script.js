@@ -15,6 +15,18 @@
     ["Gengar", "Fantasma / Veneno", "Esconde-se nas sombras e imita quem está por perto.", 94],
   ];
 
+  /* ---- Imagem dos favoritos no inicio---- */
+
+  var IMG_BASE =
+  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
+
+function imgDe(nome) {
+  for (var i = 0; i < mons.length; i++) {
+    if (mons[i][0] === nome) return IMG_BASE + mons[i][3] + ".png";
+  }
+  return "";
+}
+
   /* ---- Favoritos: lê a lista salva no navegador ---- */
   var favs = [];
   try {
@@ -28,11 +40,7 @@
     r.className = "row";
     r.dataset.n = m[0].toLowerCase();
     r.innerHTML =
-      '<div class="img"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' +
-      m[3] +
-      '.png" alt="' +
-      m[0] +
-      '"></div><div><h3>' +
+     '<div class="img"><img src="' + imgDe(m[0]) + '" alt="' + m[0] + '"></div><div><h3>' +
       m[0] +
       "</h3><small>" +
       m[1] +
@@ -65,7 +73,13 @@
   function drawFavs() {
     var s = document.querySelectorAll("#fav .slot");
     s.forEach(function (el, i) {
-      el.textContent = favs[i] || "";
+      if (favs[i]) {
+        el.innerHTML =
+          '<img src="' + imgDe(favs[i]) + '" alt="' + favs[i] + '">' +
+          "<span>" + favs[i] + "</span>";
+      } else {
+        el.innerHTML = "";
+      }
     });
   }
   drawFavs();
