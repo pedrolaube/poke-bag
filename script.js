@@ -132,22 +132,37 @@ function imgDe(nome) {
     filter();
   };
 
-  /* ---- Página Simulador: fundo animado com silhuetas de Pokémon ----
-     Cada silhueta é uma imagem que anda da direita para a esquerda.
-     Os números abaixo são os da Pokedex (veja IMG_BASE lá em cima). */
-  var silhuetas = [6, 9, 25, 39, 52, 54, 94, 131, 133, 143, 149, 150, 151, 1, 4, 7];
+  /* ---- Página Simulador: fundo animado com silhuetas de Pokémon ----*/
+   var TOTAL = 1025; // quantos Pokémon existem nos sprites (1 a 1025)
+  var QTD = 20;     // quantas silhuetas aparecem ao mesmo tempo
   var simbg = $("#simbg");
-  silhuetas.forEach(function (id) {
+
+  // Escolhe um Pokémon qualquer entre 1 e TOTAL
+  function sorteia() {
+    return Math.floor(Math.random() * TOTAL) + 1;
+  }
+
+  // Sorteia altura e tamanho novos para uma silhueta
+  function reposiciona(s) {
+    s.style.top = 4 + Math.random() * 82 + "%";
+    s.style.setProperty("--tam", 70 + Math.random() * 90 + "px");
+  }
+
+  for (var i = 0; i < QTD; i++) {
     var s = document.createElement("img");
-    s.src = IMG_BASE + id + ".png";
     s.alt = "";
     s.className = "sil";
-    s.style.top = 4 + Math.random() * 82 + "%"; // altura na tela
-    s.style.setProperty("--tam", 70 + Math.random() * 90 + "px"); // tamanho
-    s.style.animationDuration = 22 + Math.random() * 26 + "s"; // velocidade
-    s.style.animationDelay = -Math.random() * 48 + "s"; // já começa espalhado
+    s.src = IMG_BASE + sorteia() + ".png";
+    reposiciona(s);
+    s.style.animationDuration = 22 + Math.random() * 26 + "s";
+    s.style.animationDelay = -Math.random() * 48 + "s";
+    // Quando termina uma volta, vira outro Pokémon
+    s.addEventListener("animationiteration", function () {
+      this.src = IMG_BASE + sorteia() + ".png";
+      reposiciona(this);
+    });
     simbg.appendChild(s);
-  });
+  }
 
   /* ---- Página Simulador: botões da lateral ---- */
   document.querySelectorAll(".pills .pill").forEach(function (b) {
